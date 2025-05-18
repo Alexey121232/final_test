@@ -1,5 +1,5 @@
 <activity
-    android:name="io.flutter.embedding.android.FlutterActivity"
+    android:name="${applicationName"
     android:exported="true"
     android:theme="@style/LaunchTheme"
     android:hardwareAccelerated="true"
