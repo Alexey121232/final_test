@@ -1,4 +1,4 @@
-# school_fixed
+# teacher_project_fixed
 
 A new Flutter project.
 
