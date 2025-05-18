@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "teacher_project" // ← можно поменять
+rootProject.name = "teacher_project"
 include ":app"
