@@ -25,8 +25,8 @@ if (flutterVersionName == null) {
 
 android {
     namespace = "com.example.test"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdkVersion 34 // 🔧 ЯВНО указали 34, вместо flutter.compileSdkVersion
+    ndkVersion = "26.3.11579264" // опционально можешь оставить
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -34,15 +34,13 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.test"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutterVersionCode.toInteger()
-        versionName = flutterVersionName
+        minSdkVersion 21
+        targetSdkVersion 34 // тоже не забудь!
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
+}
 
     buildTypes {
         release {
