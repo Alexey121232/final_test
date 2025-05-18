@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    }
+    id 'dev.flutter.flutter-gradle-plugin'
+}
 
 android {
     namespace "com.example.teacher_project"
@@ -36,5 +37,3 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.10"
 }
-
-
