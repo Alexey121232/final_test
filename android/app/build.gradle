@@ -11,33 +11,31 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
-
-def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
-if (flutterVersionCode == null) {
-    flutterVersionCode = "1"
-}
-
-def flutterVersionName = localProperties.getProperty("flutter.versionName")
-if (flutterVersionName == null) {
-    flutterVersionName = "1.0.0"
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
 }
 
 android {
-    namespace = "com.example.test"
-    compileSdkVersion 34
-    ndkVersion = "26.3.11579264" // используемую версию уточни при необходимости
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
+    namespace "com.example.app"
+    compileSdk 34
 
     defaultConfig {
-        applicationId = "com.example.test"
-        minSdkVersion 21
-        targetSdkVersion 34
+        applicationId "com.example.app"
+        minSdk 21
+        targetSdk 34
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 
     buildTypes {
@@ -47,6 +45,10 @@ android {
     }
 }
 
-flutter {
-    source = "../../"
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
 }
+
+flutter {
+    source '../..'
+}  
