@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  gsheets: ^0.4.2
+#  gsheets: ^0.4.2
   intl: ^0.18.1
 
 flutter:
